@@ -1,0 +1,4 @@
+FROM :alpine
+WORKDIR /client
+RUN echo "hello from client" >test
+VOLUME /client-vol
