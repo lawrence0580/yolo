@@ -3,7 +3,7 @@ version: "3.8"
 services:
   client:
     build: ./client/
-    image: lawrence0508/client:1
+    image: lawrence0580/client:1
     ports:
       - "3000:3000"
     networks:
@@ -11,7 +11,7 @@ services:
 
   backend:
     build: ./backend/
-    image: lawrence0508/backend:1
+    image: lawrence0580/backend:1
     ports:
       - "5000:5000"
     networks:
