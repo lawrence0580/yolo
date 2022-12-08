@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  client:
+    build: ./client/
+    image: lawrence0508/client:1
+    ports:
+      - "3000:3000"
+    networks:
+    - my_network
+
+  backend:
+    build: ./backend/
+    image: lawrence0508/backend:1
+    ports:
+      - "5000:5000"
+    networks:
+    - my_network
+
+  mongo:
+    image: mongo:latest
+    container_name: mongod
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INTDB_ROOT_USERNAME: laki
+      MONGO_INTDB_ROOT_PASSWORD: laki123
+volumes:
+  database: 
+
+networks:
+  my_network:
+    driver: bridge
+
+
