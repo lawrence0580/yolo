@@ -1,4 +1,15 @@
-FROM :postgres
+FROM mongo-express:latest
+
+MAINTAINER Lawrence 
+
 WORKDIR /backend
-RUN echo "hello from backend" >test
-VOLUME /backend-vol
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 5000
+
+CMD ["npm", "start"]
